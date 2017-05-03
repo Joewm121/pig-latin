@@ -3,25 +3,27 @@ $(document).ready(function() {
   $("form#pig-latin").submit(function(event){
     event.preventDefault();
 
-    //make an alert when user enters something other than a letter
+    //gathering input from user and splitting each letter as individual strings inside an array
     var dontKnow = $("input#translate").val().split("");
-    // var result = userInput(input);
-    // debugger;
+
+    //for loop that runs through input from user and checks if it is a vowel or consonant
     for(var i = 0; i < dontKnow.length; i++){
-      console.log("looped");
-
       if ((vowels.includes(dontKnow[i]) === true) || (consonants.includes(dontKnow[i]) === true)) {
-
-        console.log("we can work with this");
-
-
       } else {
         $("#alert").text("Please enter a letter");
-        console.log("nope");
       }
     }
 
-    console.log("submitted");
+    //The program adds "way" to single-letter words beginning with a vowel.
+    if (vowels.includes(dontKnow[0]) === true) {
+      $("#result").text(dontKnow[0] + "way")
+    };
+
+    //The program adds "way" to the end of words more than one letter, beginning with a vowel.
+    if ((dontKnow.length > 1) && (vowels.includes(dontKnow[0]) === true)) {
+      $("#result").text(dontKnow + "way")
+    }
+
   });
 });
 
