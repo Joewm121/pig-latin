@@ -1,7 +1,39 @@
+The program will identify the following letters as vowels: "a", "e", "i", "o", "u"
+
+The program will identify any letter that is not a vowel as a consonant
+
 The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels.
 Example Input: 3
 Example Output: 3
 
-The program adds "ay" to single-letter words beginning with a vowel.
+The program does nothing to words starting or containing a non-alphabetical character
+Example Input: ?blah, 9blah, bl9ah
+Example Output: N/A
+
+The program adds "way" to single-letter words beginning with a vowel.
 Example Input: i
-Example Output: iay
+Example Output: iWay
+
+The program adds "way" to the end of words more than one letter, beginning with a vowel.
+Example Input: Are
+Example Output: areWay
+
+The program moves all of the first consecutive consonants to the end of words beginning with one or more consonants, then adds "ay"
+Example Input: Break
+Example Output: eakBray
+
+The program moves "qu" to the end of words that BEGIN with "qu", then adds "ay" to the "qu"
+Example Input: Queen
+Example Output: een-quay
+
+The program moves the first consonant(s) + "qu" to the end of words that CONTAIN "qu" in the middle, then adds "ay" to the consonant(s) + "qu"
+Example Input: Square
+Example Output: areSquay
+
+The program moves the first consonant(s) to the end of words that have "y" right after these consonants, then adds "ay"
+Example Input: Hydrogen, Psycho
+Example Output: ydrogen-Hay, ychoPsay
+
+The program will use the above rules on each individual word if the user inputs more than one word
+Example Input: Hello pig latin
+Example Output: elloHay igPay atinLay
